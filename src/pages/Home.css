@@ -1,0 +1,125 @@
+.home-container {
+  min-height: 100vh;
+  padding: 40px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.home-header {
+  margin-bottom: 40px;
+}
+
+.home-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.home-subtitle {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.categories-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+
+.categories-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.category-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.category-card:hover {
+  border-color: #4a90d9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(74, 144, 217, 0.1);
+}
+
+.category-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.category-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.category-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 2px;
+}
+
+.category-desc {
+  font-size: 13px;
+  color: #888;
+}
+
+.category-arrow {
+  font-size: 18px;
+  color: #ccc;
+}
+
+.signal-banner {
+  margin-top: 24px;
+  padding: 16px 20px;
+  background: #f0f7ff;
+  border: 1px solid #c8e0f7;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.signal-banner:hover {
+  background: #e3f0fd;
+}
+
+.signal-banner-text h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a6bbf;
+  margin-bottom: 2px;
+}
+
+.signal-banner-text p {
+  font-size: 13px;
+  color: #5a9fd4;
+}
+
+.signal-banner-arrow {
+  font-size: 18px;
+  color: #4a90d9;
+}
