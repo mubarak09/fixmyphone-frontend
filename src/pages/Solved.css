@@ -1,0 +1,102 @@
+/* ----------------------------------------
+   Solved.css
+   Styles for the Problem Solved screen
+   Shown when a user selects an answer that
+   resolves their issue early in the flow
+---------------------------------------- */
+
+/* Main container - centres everything vertically */
+.solved-container {
+  min-height: 100vh;
+  padding: 60px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Green circle with a tick */
+.solved-icon {
+  width: 72px;
+  height: 72px;
+  background: #e8f5e9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: #2e7d32;
+  margin-bottom: 24px;
+}
+
+/* Main heading */
+.solved-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+/* Subtitle explaining what happened */
+.solved-subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 32px;
+  line-height: 1.5;
+}
+
+/* Card showing what fixed the issue */
+.solved-fix-card {
+  width: 100%;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+/* Label inside the fix card */
+.solved-fix-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+/* The fix text inside the card */
+.solved-fix-text {
+  font-size: 16px;
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+/* Advice paragraph */
+.solved-advice {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 40px;
+  line-height: 1.5;
+}
+
+/* Button to go back to the Home page */
+.solved-home-button {
+  width: 100%;
+  padding: 16px;
+  background: #4a90d9;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.solved-home-button:hover {
+  background: #357abd;
+}

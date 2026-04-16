@@ -1,0 +1,265 @@
+{
+  "signal": {
+    "label": "Mobile Signal",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What is the main problem you are experiencing?",
+        "options": [
+          { "id": "a", "text": "No signal or no service" },
+          { "id": "b", "text": "Weak signal or one bar" },
+          { "id": "c", "text": "Signal drops in and out" },
+          { "id": "d", "text": "Slow mobile data" }
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Where does this problem happen?",
+        "options": [
+          { "id": "a", "text": "Everywhere I go" },
+          { "id": "b", "text": "Only in one specific location" },
+          { "id": "c", "text": "Mostly indoors" },
+          { "id": "d", "text": "Only in certain areas or towns" }
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "How long has this problem been happening?",
+        "options": [
+          { "id": "a", "text": "Just started today" },
+          { "id": "b", "text": "A few days" },
+          { "id": "c", "text": "A week or more" },
+          { "id": "d", "text": "Always been like this" }
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Have you tried turning airplane mode on and off?",
+        "options": [
+          { "id": "a", "text": "Yes and it fixed it", "exits": true, "fixDescription": "Toggling airplane mode off and on reset your network connection and resolved the issue." },
+          { "id": "b", "text": "Yes but it made no difference" },
+          { "id": "c", "text": "No I have not tried that yet" }
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Does the problem affect calls, data or both?",
+        "options": [
+          { "id": "a", "text": "Calls only" },
+          { "id": "b", "text": "Mobile data only" },
+          { "id": "c", "text": "Both calls and data" }
+        ]
+      },
+      {
+        "id": "q6",
+        "text": "Have you recently changed SIM card or network provider?",
+        "options": [
+          { "id": "a", "text": "Yes recently changed SIM" },
+          { "id": "b", "text": "Yes recently changed provider" },
+          { "id": "c", "text": "No changes made" }
+        ]
+      }
+    ]
+  },
+  "performance": {
+    "label": "Performance",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What performance issue are you experiencing?",
+        "options": [
+          { "id": "a", "text": "Phone is very slow generally" },
+          { "id": "b", "text": "Apps take a long time to open" },
+          { "id": "c", "text": "Phone freezes or becomes unresponsive" },
+          { "id": "d", "text": "Phone restarts on its own" }
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "How much storage is available on your phone?",
+        "options": [
+          { "id": "a", "text": "Less than 1GB free" },
+          { "id": "b", "text": "Between 1GB and 5GB free" },
+          { "id": "c", "text": "More than 5GB free" },
+          { "id": "d", "text": "I am not sure" }
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "When did the performance issues start?",
+        "options": [
+          { "id": "a", "text": "After a software update" },
+          { "id": "b", "text": "After installing a new app" },
+          { "id": "c", "text": "Gradually over time" },
+          { "id": "d", "text": "Suddenly with no obvious cause" }
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Have you already tried restarting your phone?",
+        "options": [
+          { "id": "a", "text": "Yes and it fixed it", "exits": true, "fixDescription": "Restarting your phone cleared the issue. A regular restart helps keep your phone running smoothly." },
+          { "id": "b", "text": "Yes but it made no difference" },
+          { "id": "c", "text": "No I have not restarted it" }
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "How old is your phone approximately?",
+        "options": [
+          { "id": "a", "text": "Less than 1 year old" },
+          { "id": "b", "text": "1 to 3 years old" },
+          { "id": "c", "text": "More than 3 years old" }
+        ]
+      }
+    ]
+  },
+  "battery": {
+    "label": "Battery and Heat",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What is the main issue you are experiencing?",
+        "options": [
+          { "id": "a", "text": "Battery drains very quickly" },
+          { "id": "b", "text": "Phone gets very hot" },
+          { "id": "c", "text": "Both battery drain and overheating" },
+          { "id": "d", "text": "Battery does not charge properly" }
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "How long does your battery last on a full charge?",
+        "options": [
+          { "id": "a", "text": "Less than 4 hours" },
+          { "id": "b", "text": "Between 4 and 8 hours" },
+          { "id": "c", "text": "More than 8 hours" }
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "When does your phone get hottest?",
+        "options": [
+          { "id": "a", "text": "While charging" },
+          { "id": "b", "text": "While using certain apps" },
+          { "id": "c", "text": "Even when sitting idle" },
+          { "id": "d", "text": "Phone does not get hot" }
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Have you checked which apps are using the most battery?",
+        "options": [
+          { "id": "a", "text": "Yes and uninstalled the problem app", "exits": true, "fixDescription": "Removing the app that was draining your battery resolved the issue." },
+          { "id": "b", "text": "Yes found a problem app but kept it" },
+          { "id": "c", "text": "Yes but nothing looked unusual" },
+          { "id": "d", "text": "No I have not checked" }
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "How old is your battery or phone?",
+        "options": [
+          { "id": "a", "text": "Less than 1 year old" },
+          { "id": "b", "text": "1 to 2 years old" },
+          { "id": "c", "text": "More than 2 years old" }
+        ]
+      }
+    ]
+  },
+  "apps": {
+    "label": "Apps",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What is happening with your apps?",
+        "options": [
+          { "id": "a", "text": "One specific app keeps crashing" },
+          { "id": "b", "text": "Multiple apps are crashing" },
+          { "id": "c", "text": "Apps are very slow to load" },
+          { "id": "d", "text": "Apps will not install or update" }
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "When did this problem start?",
+        "options": [
+          { "id": "a", "text": "After a recent app update" },
+          { "id": "b", "text": "After a phone software update" },
+          { "id": "c", "text": "Gradually over time" },
+          { "id": "d", "text": "Suddenly with no obvious reason" }
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Have you tried clearing the app cache?",
+        "options": [
+          { "id": "a", "text": "Yes and it fixed the problem", "exits": true, "fixDescription": "Clearing the app cache removed corrupted temporary files and resolved the issue." },
+          { "id": "b", "text": "Yes but the problem came back" },
+          { "id": "c", "text": "No I have not tried that" }
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "How much free storage does your phone have?",
+        "options": [
+          { "id": "a", "text": "Less than 1GB free" },
+          { "id": "b", "text": "Between 1GB and 5GB free" },
+          { "id": "c", "text": "More than 5GB free" },
+          { "id": "d", "text": "I am not sure" }
+        ]
+      }
+    ]
+  },
+  "wifi": {
+    "label": "Wi-Fi and Bluetooth",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Which connection type is causing problems?",
+        "options": [
+          { "id": "a", "text": "Wi-Fi only" },
+          { "id": "b", "text": "Bluetooth only" },
+          { "id": "c", "text": "Both Wi-Fi and Bluetooth" }
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "What is the specific Wi-Fi or Bluetooth problem?",
+        "options": [
+          { "id": "a", "text": "Cannot connect to the network" },
+          { "id": "b", "text": "Connects but has no internet" },
+          { "id": "c", "text": "Keeps disconnecting" },
+          { "id": "d", "text": "Very slow speeds" }
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Does this happen on all networks or just one?",
+        "options": [
+          { "id": "a", "text": "Only on my home network" },
+          { "id": "b", "text": "On all networks I try" },
+          { "id": "c", "text": "Only on certain networks" }
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Have you tried forgetting the network and reconnecting?",
+        "options": [
+          { "id": "a", "text": "Yes and it fixed it", "exits": true, "fixDescription": "Forgetting and reconnecting to the network cleared the saved connection settings and resolved the issue."},
+          { "id": "b", "text": "Yes but the problem came back" },
+          { "id": "c", "text": "No I have not tried that" }
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Have you restarted your router recently?",
+        "options": [
+          { "id": "a", "text": "Yes and it helped", "exits": true, "fixDescription": "Restarting the router refreshed the network connection and resolved the issue." },
+          { "id": "b", "text": "Yes but no difference" },
+          { "id": "c", "text": "No I have not restarted it" }
+        ]
+      }
+    ]
+  }
+}
