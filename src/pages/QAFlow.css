@@ -1,0 +1,134 @@
+/* ----------------------------------------
+   QAFlow.css
+   Styles for the Q&A guided flow screen
+   This screen shows one question at a time
+   and collects the user's answers
+---------------------------------------- */
+
+/* Main container - centres content on screen */
+.qa-container {
+  min-height: 100vh;
+  padding: 40px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Top bar showing category name and back button */
+.qa-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+/* Back button to return to Home */
+.qa-back-button {
+  background: none;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #666;
+  transition: background 0.2s ease;
+}
+
+.qa-back-button:hover {
+  background: #f5f5f5;
+}
+
+/* Category label shown at the top */
+.qa-category-label {
+  font-size: 14px;
+  color: #888;
+  font-weight: 500;
+}
+
+/* Progress bar section */
+.qa-progress-section {
+  margin-bottom: 32px;
+}
+
+/* Text showing step count e.g. Question 2 of 6 */
+.qa-progress-text {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+/* The grey background track of the progress bar */
+.qa-progress-bar-background {
+  height: 6px;
+  background: #e8e8e8;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+/* The coloured fill that grows as questions are answered */
+.qa-progress-bar-fill {
+  height: 100%;
+  background: #4a90d9;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+/* The question text */
+.qa-question-text {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.4;
+  margin-bottom: 28px;
+}
+
+/* The list of answer option buttons */
+.qa-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Each individual answer option button */
+.qa-option-button {
+  width: 100%;
+  padding: 16px 20px;
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  text-align: left;
+  font-size: 15px;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.qa-option-button:hover {
+  border-color: #4a90d9;
+  background: #f0f7ff;
+}
+
+/* Highlighted style when an option is selected */
+.qa-option-button.selected {
+  border-color: #4a90d9;
+  background: #f0f7ff;
+  font-weight: 500;
+}
+
+/* Next button shown after an option is selected */
+.qa-next-button {
+  width: 100%;
+  margin-top: 24px;
+  padding: 16px;
+  background: #4a90d9;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.qa-next-button:hover {
+  background: #357abd;
+}
