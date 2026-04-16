@@ -1,0 +1,463 @@
+{
+  "network-outage": {
+    "id": "network-outage",
+    "title": "Possible network outage in your area",
+    "description": "Your signal loss appears to be related to a network issue in your area rather than your device.",
+    "fixSteps": [
+      {
+        "step": 1,
+        "title": "Check your network provider status page",
+        "detail": "Visit your network provider's website or app and look for any reported outages in your area."
+      },
+      {
+        "step": 2,
+        "title": "Toggle airplane mode on and off",
+        "detail": "Swipe down from the top of your screen, turn on airplane mode for 30 seconds, then turn it off again. This forces your phone to reconnect to the network."
+      },
+      {
+        "step": 3,
+        "title": "Restart your phone",
+        "detail": "A full restart can clear network faults. Hold the power button and select restart."
+      },
+      {
+        "step": 4,
+        "title": "Move to a different location",
+        "detail": "If possible, move to a different area. If signal returns elsewhere, the issue is likely localised to that area."
+      }
+    ]
+  },
+  "sim-issue": {
+    "id": "sim-issue",
+    "title": "SIM card or account issue",
+    "description": "Your issue may be related to your SIM card not being read correctly or an account problem with your provider.",
+    "fixSteps": [
+      {
+        "step": 1,
+        "title": "Remove and reinsert your SIM card",
+        "detail": "Power off your phone, carefully remove the SIM card using the SIM tray tool, wait 10 seconds, reinsert it and power back on."
+      },
+      {
+        "step": 2,
+        "title": "Check your account is active",
+        "detail": "Log into your provider's app or website to confirm your account is active and your plan has not expired."
+      },
+      {
+        "step": 3,
+        "title": "Test your SIM in another phone",
+        "detail": "If possible, put your SIM into another phone to check if the problem follows the SIM or stays with your device."
+      },
+      {
+        "step": 4,
+        "title": "Contact your network provider",
+        "detail": "If none of the above work, contact your provider directly. They can check if your SIM needs to be replaced or if there is an account issue."
+      }
+    ]
+  },
+  "weak-coverage": {
+    "id": "weak-coverage",
+    "title": "Weak signal coverage in your area",
+    "description": "Your location may have limited mobile coverage. This can be caused by distance from a mast, building materials or geography.",
+    "fixSteps": [
+      {
+        "step": 1,
+        "title": "Move to a window or go outside",
+        "detail": "Building materials like concrete and metal block signals. Moving closer to a window or stepping outside can improve signal strength significantly."
+      },
+      {
+        "step": 2,
+        "title": "Check your network mode settings",
+        "detail": "Go to Settings → Mobile Network → Network Mode. Try switching between 4G and 3G to see if one gives a stronger signal in your area."
+      },
+      {
+        "step": 3,
+        "title": "Check coverage for your area online",
+        "detail": "Visit your network provider's coverage checker and enter your location to see what level of coverage is expected in your area."
+      },
+      {
+        "step": 4,
+        "title": "Consider a signal booster or Wi-Fi calling",
+        "detail": "If you are in a known weak area, enabling Wi-Fi calling allows calls and texts over your Wi-Fi connection instead of the mobile network."
+      }
+    ]
+  },
+  "data-congestion": {
+    "id": "data-congestion",
+    "title": "Mobile data congestion or speed issue",
+    "description": "Your mobile data may be slow due to network congestion, data limits or APN settings on your device.",
+    "fixSteps": [
+      {
+        "step": 1,
+        "title": "Check your data allowance",
+        "detail": "Log into your provider's app and check if you have used up your monthly data allowance. Some providers reduce speed after a certain limit."
+      },
+      {
+        "step": 2,
+        "title": "Toggle airplane mode on and off",
+        "detail": "This forces your phone to reconnect to the network and can refresh your data connection."
+      },
+      {
+        "step": 3,
+        "title": "Check your APN settings",
+        "detail": "Go to Settings → Mobile Network → Access Point Names. Make sure the APN settings match your provider's recommended settings which can be found on their support page."
+      },
+      {
+        "step": 4,
+        "title": "Try a different location",
+        "detail": "Network congestion is more common in busy areas. If you are in a crowded location, moving slightly can sometimes give a better connection."
+      }
+    ]
+  },
+  "network-interference": {
+    "id": "network-interference",
+    "title": "Network interference causing signal drops",
+    "description": "Your signal may be dropping due to interference from nearby objects or because your phone is switching between network masts.",
+    "fixSteps": [
+      {
+        "step": 1,
+        "title": "Toggle airplane mode on and off",
+        "detail": "This forces your phone to reconnect to the nearest strongest mast and can stop it switching between masts repeatedly."
+      },
+      {
+        "step": 2,
+        "title": "Manually select your network",
+        "detail": "Go to Settings → Mobile Network → Network Operators → Search manually. Select your provider from the list. This stops automatic switching."
+      },
+      {
+        "step": 3,
+        "title": "Restart your phone",
+        "detail": "A restart can clear the network connection cache and help your phone find a stable connection."
+      }
+    ]
+  },
+  "low-storage": {
+    "id": "low-storage",
+    "title": "Low storage causing performance issues",
+    "description": "Your phone needs free storage space to run smoothly. When storage is nearly full, performance can drop significantly.",
+    "fixSteps": [
+      {
+        "step": 1,
+        "title": "Check your available storage",
+        "detail": "Go to Settings → Storage to see how much space is used and available."
+      },
+      {
+        "step": 2,
+        "title": "Delete unused apps",
+        "detail": "Go through your apps and uninstall any you no longer use. Even freeing up 1-2GB can make a noticeable difference."
+      },
+      {
+        "step": 3,
+        "title": "Clear app caches",
+        "detail": "Go to Settings → Apps, select each large app and tap Clear Cache. This removes temporary files without deleting your data."
+      },
+      {
+        "step": 4,
+        "title": "Move photos and videos to cloud storage",
+        "detail": "Use Google Photos or iCloud to back up and remove media from your device. Photos and videos are usually the biggest use of storage."
+      }
+    ]
+  },
+  "too-many-background-apps": {
+    "id": "too-many-background-apps",
+    "title": "Too many apps running in the background",
+    "description": "Apps running in the background use memory and processing power which can slow your phone down noticeably.",
+    "fixSteps": [
+      {
+        "step": 1,
+        "title": "Close all background apps",
+        "detail": "Press the recent apps button and swipe away all open apps. This frees up RAM immediately."
+      },
+      {
+        "step": 2,
+        "title": "Restrict background activity for apps",
+        "detail": "Go to Settings → Apps → select an app → Battery → Restrict background activity. Do this for apps you do not need running in the background."
+      },
+      {
+        "step": 3,
+        "title": "Restart your phone",
+        "detail": "A restart closes all background processes and gives your phone a fresh start."
+      }
+    ]
+  },
+  "software-fault": {
+    "id": "software-fault",
+    "title": "Software or update causing performance issues",
+    "description": "A recent software update or app installation may have introduced a conflict or bug that is affecting performance.",
+    "fixSteps": [
+      {
+        "step": 1,
+        "title": "Restart your phone",
+        "detail": "A restart can clear temporary software faults. Hold the power button and select restart."
+      },
+      {
+        "step": 2,
+        "title": "Check for further software updates",
+        "detail": "Go to Settings → Software Update. Sometimes a follow-up patch is released to fix issues introduced by a previous update."
+      },
+      {
+        "step": 3,
+        "title": "Identify the problem app",
+        "detail": "If the issue started after installing a specific app, try uninstalling it to see if performance improves."
+      },
+      {
+        "step": 4,
+        "title": "Clear the system cache partition",
+        "detail": "On Android, this can be done through recovery mode. Search for the specific steps for your phone model. This does not delete your data."
+      }
+    ]
+  },
+  "old-hardware": {
+    "id": "old-hardware",
+    "title": "Ageing hardware limitations",
+    "description": "Older phones may struggle with newer apps and software updates as the hardware becomes less capable of keeping up with demands.",
+    "fixSteps": [
+      {
+        "step": 1,
+        "title": "Reduce animations and visual effects",
+        "detail": "Go to Settings → Developer Options → Window animation scale and set it to 0.5x. This makes the phone feel noticeably faster."
+      },
+      {
+        "step": 2,
+        "title": "Use lite versions of apps where available",
+        "detail": "Many popular apps like Facebook and Google Maps have lite versions that use less memory and processing power."
+      },
+      {
+        "step": 3,
+        "title": "Perform a factory reset as a last resort",
+        "detail": "A factory reset removes all data and restores the phone to its original state. Back up everything first. This often significantly improves performance on older devices."
+      }
+    ]
+  },
+  "battery-draining-app": {
+    "id": "battery-draining-app",
+    "title": "An app is draining your battery",
+    "description": "One or more apps are using excessive battery in the background causing your battery to drain faster than expected.",
+    "fixSteps": [
+      {
+        "step": 1,
+        "title": "Check battery usage by app",
+        "detail": "Go to Settings → Battery → Battery Usage. Look for any app using an unusually high percentage of battery."
+      },
+      {
+        "step": 2,
+        "title": "Restrict background activity for the problem app",
+        "detail": "Go to Settings → Apps → select the app → Battery → Restrict background activity."
+      },
+      {
+        "step": 3,
+        "title": "Uninstall the app if not needed",
+        "detail": "If the problem app is not essential, uninstalling it is the most effective fix."
+      },
+      {
+        "step": 4,
+        "title": "Check for an app update",
+        "detail": "Sometimes battery drain is caused by a bug in a specific version of an app. Updating it may resolve the issue."
+      }
+    ]
+  },
+  "overheating-app": {
+    "id": "overheating-app",
+    "title": "An app is causing your phone to overheat",
+    "description": "Certain apps particularly games or streaming apps can cause your processor to work very hard leading to overheating.",
+    "fixSteps": [
+      {
+        "step": 1,
+        "title": "Close the app and let your phone cool down",
+        "detail": "Remove the case if you have one and place the phone on a flat cool surface for 10 minutes."
+      },
+      {
+        "step": 2,
+        "title": "Check which app is causing the heat",
+        "detail": "Go to Settings → Battery → Battery Usage and look for apps using a high percentage. Heavy apps like games are common culprits."
+      },
+      {
+        "step": 3,
+        "title": "Reduce screen brightness and close background apps",
+        "detail": "High brightness combined with multiple background apps puts extra load on the processor and battery."
+      },
+      {
+        "step": 4,
+        "title": "Check for app updates",
+        "detail": "An app update may include optimisations that reduce processor usage."
+      }
+    ]
+  },
+  "faulty-charger": {
+    "id": "faulty-charger",
+    "title": "Faulty charger or charging port issue",
+    "description": "Your charging problem may be caused by a damaged cable, faulty charger or debris in the charging port.",
+    "fixSteps": [
+      {
+        "step": 1,
+        "title": "Try a different charging cable and adapter",
+        "detail": "Test with a different cable and charger to rule out a faulty accessory. Always use a certified charger for your device."
+      },
+      {
+        "step": 2,
+        "title": "Clean the charging port",
+        "detail": "Use a soft dry toothbrush or compressed air to gently clean any dust or debris from the charging port. Do not use metal objects."
+      },
+      {
+        "step": 3,
+        "title": "Try wireless charging if supported",
+        "detail": "If your phone supports wireless charging, try this to determine if the charging port itself is the problem."
+      },
+      {
+        "step": 4,
+        "title": "Visit a repair centre",
+        "detail": "If none of the above work, the charging port may need professional repair or replacement."
+      }
+    ]
+  },
+  "old-battery": {
+    "id": "old-battery",
+    "title": "Battery degradation over time",
+    "description": "Phone batteries degrade with use and age. After 2 years a battery may only hold 80 percent of its original charge capacity.",
+    "fixSteps": [
+      {
+        "step": 1,
+        "title": "Check your battery health",
+        "detail": "On iPhone go to Settings → Battery → Battery Health. On Android the option varies by manufacturer but can often be found in Settings → Battery."
+      },
+      {
+        "step": 2,
+        "title": "Enable battery saver mode",
+        "detail": "Go to Settings → Battery → Battery Saver. This limits background activity and reduces power consumption to extend battery life."
+      },
+      {
+        "step": 3,
+        "title": "Reduce screen brightness and timeout",
+        "detail": "The screen is the biggest drain on most phones. Reduce brightness and set the screen to turn off after 30 seconds of inactivity."
+      },
+      {
+        "step": 4,
+        "title": "Consider a battery replacement",
+        "detail": "If battery health is below 80 percent, a battery replacement is the most effective long-term solution. Contact your manufacturer or a certified repair centre."
+      }
+    ]
+  },
+  "corrupted-app-data": {
+    "id": "corrupted-app-data",
+    "title": "Corrupted app data or cache",
+    "description": "The app may have corrupted temporary files or data that is causing it to crash or behave unexpectedly.",
+    "fixSteps": [
+      {
+        "step": 1,
+        "title": "Clear the app cache",
+        "detail": "Go to Settings → Apps → select the app → Storage → Clear Cache. This removes temporary files without deleting your personal data in the app."
+      },
+      {
+        "step": 2,
+        "title": "Clear the app data if cache clear did not work",
+        "detail": "Go to Settings → Apps → select the app → Storage → Clear Data. Warning: this will reset the app to its default state and you may need to log in again."
+      },
+      {
+        "step": 3,
+        "title": "Uninstall and reinstall the app",
+        "detail": "Uninstalling and reinstalling gives the app a completely fresh installation which usually resolves persistent crashing issues."
+      },
+      {
+        "step": 4,
+        "title": "Check for an app update",
+        "detail": "Open the Play Store or App Store and check if there is an update available for the app. Updates often fix crash bugs."
+      }
+    ]
+  },
+  "software-conflict": {
+    "id": "software-conflict",
+    "title": "Software conflict after a system update",
+    "description": "A recent system update may have caused a conflict with one or more of your apps leading to crashes or slow performance.",
+    "fixSteps": [
+      {
+        "step": 1,
+        "title": "Restart your phone",
+        "detail": "A restart after an update allows the system to complete any background processes and can resolve minor conflicts."
+      },
+      {
+        "step": 2,
+        "title": "Update all your apps",
+        "detail": "Open the Play Store or App Store and update all apps. Developers often release updates after a major OS update to fix compatibility issues."
+      },
+      {
+        "step": 3,
+        "title": "Clear cache for affected apps",
+        "detail": "Go to Settings → Apps → select the app → Storage → Clear Cache."
+      },
+      {
+        "step": 4,
+        "title": "Check for a follow-up system update",
+        "detail": "Go to Settings → Software Update. A follow-up patch may already be available to fix the issue."
+      }
+    ]
+  },
+  "router-issue": {
+    "id": "router-issue",
+    "title": "Router or home network issue",
+    "description": "The problem appears to be with your router or home network rather than your phone itself.",
+    "fixSteps": [
+      {
+        "step": 1,
+        "title": "Restart your router",
+        "detail": "Unplug your router from the power socket, wait 30 seconds and plug it back in. Wait 2 minutes for it to fully restart before testing."
+      },
+      {
+        "step": 2,
+        "title": "Move closer to the router",
+        "detail": "Wi-Fi signal weakens with distance and through walls. Test the connection when standing close to the router to rule out a range issue."
+      },
+      {
+        "step": 3,
+        "title": "Check if other devices have the same problem",
+        "detail": "If other devices also have no internet it confirms the issue is with the router or your broadband connection rather than your phone."
+      },
+      {
+        "step": 4,
+        "title": "Contact your broadband provider",
+        "detail": "If restarting the router does not resolve the issue your broadband provider may have a line fault or outage in your area."
+      }
+    ]
+  },
+  "saved-network-fault": {
+    "id": "saved-network-fault",
+    "title": "Saved network settings causing connection issues",
+    "description": "Your phone may have saved incorrect or outdated network settings for this Wi-Fi network which is preventing a proper connection.",
+    "fixSteps": [
+      {
+        "step": 1,
+        "title": "Forget the network and reconnect",
+        "detail": "Go to Settings → Wi-Fi, press and hold the network name, select Forget. Then reconnect by selecting the network and entering the password again."
+      },
+      {
+        "step": 2,
+        "title": "Reset network settings",
+        "detail": "Go to Settings → General Management → Reset → Reset Network Settings. This clears all saved Wi-Fi passwords and Bluetooth pairings so only do this if other steps have not worked."
+      },
+      {
+        "step": 3,
+        "title": "Check the Wi-Fi password is correct",
+        "detail": "Confirm you are using the correct password for the network. The password is usually on a label on the back of the router."
+      }
+    ]
+  },
+  "bluetooth-interference": {
+    "id": "bluetooth-interference",
+    "title": "Bluetooth interference affecting connectivity",
+    "description": "Bluetooth and Wi-Fi both use a specific frequency band and can interfere with each other causing connectivity problems.",
+    "fixSteps": [
+      {
+        "step": 1,
+        "title": "Turn Bluetooth off and test Wi-Fi",
+        "detail": "Go to Settings → Bluetooth and toggle it off. Check if your Wi-Fi connection improves. If it does, interference is the cause."
+      },
+      {
+        "step": 2,
+        "title": "Switch your router to the 5GHz band",
+        "detail": "If your router supports dual band, connect to the 5GHz network instead of 2.4GHz. The 5GHz band does not interfere with Bluetooth."
+      },
+      {
+        "step": 3,
+        "title": "Move Bluetooth devices away from your router",
+        "detail": "Keep Bluetooth speakers, headphones and other devices away from your router to reduce interference."
+      }
+    ]
+  }
+}

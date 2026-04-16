@@ -1,0 +1,372 @@
+{
+  "signal": [
+    {
+      "questionId": "q1",
+      "answerId": "a",
+      "causeId": "network-outage",
+      "score": 3
+    },
+    {
+      "questionId": "q1",
+      "answerId": "a",
+      "causeId": "sim-issue",
+      "score": 2
+    },
+    {
+      "questionId": "q1",
+      "answerId": "b",
+      "causeId": "weak-coverage",
+      "score": 3
+    },
+    {
+      "questionId": "q1",
+      "answerId": "c",
+      "causeId": "network-interference",
+      "score": 3
+    },
+    {
+      "questionId": "q1",
+      "answerId": "d",
+      "causeId": "data-congestion",
+      "score": 3
+    },
+    {
+      "questionId": "q2",
+      "answerId": "a",
+      "causeId": "network-outage",
+      "score": 3
+    },
+    {
+      "questionId": "q2",
+      "answerId": "a",
+      "causeId": "sim-issue",
+      "score": 2
+    },
+    {
+      "questionId": "q2",
+      "answerId": "b",
+      "causeId": "weak-coverage",
+      "score": 3
+    },
+    {
+      "questionId": "q2",
+      "answerId": "c",
+      "causeId": "weak-coverage",
+      "score": 2
+    },
+    {
+      "questionId": "q2",
+      "answerId": "d",
+      "causeId": "weak-coverage",
+      "score": 2
+    },
+    {
+      "questionId": "q3",
+      "answerId": "a",
+      "causeId": "network-outage",
+      "score": 3
+    },
+    {
+      "questionId": "q3",
+      "answerId": "b",
+      "causeId": "network-outage",
+      "score": 2
+    },
+    {
+      "questionId": "q3",
+      "answerId": "d",
+      "causeId": "weak-coverage",
+      "score": 2
+    },
+    {
+      "questionId": "q5",
+      "answerId": "c",
+      "causeId": "network-outage",
+      "score": 2
+    },
+    {
+      "questionId": "q6",
+      "answerId": "a",
+      "causeId": "sim-issue",
+      "score": 3
+    },
+    {
+      "questionId": "q6",
+      "answerId": "b",
+      "causeId": "sim-issue",
+      "score": 3
+    }
+  ],
+  "performance": [
+    {
+      "questionId": "q1",
+      "answerId": "a",
+      "causeId": "low-storage",
+      "score": 2
+    },
+    {
+      "questionId": "q1",
+      "answerId": "a",
+      "causeId": "too-many-background-apps",
+      "score": 2
+    },
+    {
+      "questionId": "q1",
+      "answerId": "b",
+      "causeId": "low-storage",
+      "score": 3
+    },
+    {
+      "questionId": "q1",
+      "answerId": "c",
+      "causeId": "too-many-background-apps",
+      "score": 3
+    },
+    {
+      "questionId": "q1",
+      "answerId": "d",
+      "causeId": "software-fault",
+      "score": 3
+    },
+    {
+      "questionId": "q2",
+      "answerId": "a",
+      "causeId": "low-storage",
+      "score": 4
+    },
+    {
+      "questionId": "q2",
+      "answerId": "b",
+      "causeId": "low-storage",
+      "score": 2
+    },
+    {
+      "questionId": "q3",
+      "answerId": "a",
+      "causeId": "software-fault",
+      "score": 3
+    },
+    {
+      "questionId": "q3",
+      "answerId": "b",
+      "causeId": "software-fault",
+      "score": 3
+    },
+    {
+      "questionId": "q3",
+      "answerId": "c",
+      "causeId": "too-many-background-apps",
+      "score": 2
+    },
+    {
+      "questionId": "q3",
+      "answerId": "c",
+      "causeId": "low-storage",
+      "score": 2
+    },
+    {
+      "questionId": "q4",
+      "answerId": "c",
+      "causeId": "old-hardware",
+      "score": 3
+    }
+  ],
+  "battery": [
+    {
+      "questionId": "q1",
+      "answerId": "a",
+      "causeId": "battery-draining-app",
+      "score": 3
+    },
+    {
+      "questionId": "q1",
+      "answerId": "b",
+      "causeId": "overheating-app",
+      "score": 3
+    },
+    {
+      "questionId": "q1",
+      "answerId": "c",
+      "causeId": "battery-draining-app",
+      "score": 2
+    },
+    {
+      "questionId": "q1",
+      "answerId": "c",
+      "causeId": "overheating-app",
+      "score": 2
+    },
+    {
+      "questionId": "q1",
+      "answerId": "d",
+      "causeId": "faulty-charger",
+      "score": 4
+    },
+    {
+      "questionId": "q2",
+      "answerId": "a",
+      "causeId": "battery-draining-app",
+      "score": 3
+    },
+    {
+      "questionId": "q2",
+      "answerId": "a",
+      "causeId": "old-battery",
+      "score": 2
+    },
+    {
+      "questionId": "q3",
+      "answerId": "a",
+      "causeId": "faulty-charger",
+      "score": 3
+    },
+    {
+      "questionId": "q3",
+      "answerId": "b",
+      "causeId": "overheating-app",
+      "score": 3
+    },
+    {
+      "questionId": "q3",
+      "answerId": "c",
+      "causeId": "battery-draining-app",
+      "score": 2
+    },
+    {
+      "questionId": "q4",
+      "answerId": "b",
+      "causeId": "battery-draining-app",
+      "score": 3
+    },
+    {
+      "questionId": "q5",
+      "answerId": "c",
+      "causeId": "old-battery",
+      "score": 4
+    }
+  ],
+  "apps": [
+    {
+      "questionId": "q1",
+      "answerId": "a",
+      "causeId": "corrupted-app-data",
+      "score": 3
+    },
+    {
+      "questionId": "q1",
+      "answerId": "b",
+      "causeId": "low-storage",
+      "score": 3
+    },
+    {
+      "questionId": "q1",
+      "answerId": "c",
+      "causeId": "low-storage",
+      "score": 3
+    },
+    {
+      "questionId": "q1",
+      "answerId": "d",
+      "causeId": "low-storage",
+      "score": 3
+    },
+    {
+      "questionId": "q2",
+      "answerId": "a",
+      "causeId": "corrupted-app-data",
+      "score": 3
+    },
+    {
+      "questionId": "q2",
+      "answerId": "b",
+      "causeId": "software-conflict",
+      "score": 3
+    },
+    {
+      "questionId": "q3",
+      "answerId": "b",
+      "causeId": "corrupted-app-data",
+      "score": 3
+    },
+    {
+      "questionId": "q4",
+      "answerId": "a",
+      "causeId": "low-storage",
+      "score": 4
+    }
+  ],
+  "wifi": [
+    {
+      "questionId": "q1",
+      "answerId": "a",
+      "causeId": "router-issue",
+      "score": 2
+    },
+    {
+      "questionId": "q1",
+      "answerId": "a",
+      "causeId": "saved-network-fault",
+      "score": 2
+    },
+    {
+      "questionId": "q1",
+      "answerId": "b",
+      "causeId": "bluetooth-interference",
+      "score": 3
+    },
+    {
+      "questionId": "q1",
+      "answerId": "c",
+      "causeId": "router-issue",
+      "score": 3
+    },
+    {
+      "questionId": "q2",
+      "answerId": "a",
+      "causeId": "saved-network-fault",
+      "score": 3
+    },
+    {
+      "questionId": "q2",
+      "answerId": "b",
+      "causeId": "router-issue",
+      "score": 3
+    },
+    {
+      "questionId": "q2",
+      "answerId": "c",
+      "causeId": "router-issue",
+      "score": 2
+    },
+    {
+      "questionId": "q2",
+      "answerId": "c",
+      "causeId": "bluetooth-interference",
+      "score": 2
+    },
+    {
+      "questionId": "q3",
+      "answerId": "a",
+      "causeId": "router-issue",
+      "score": 3
+    },
+    {
+      "questionId": "q3",
+      "answerId": "b",
+      "causeId": "saved-network-fault",
+      "score": 2
+    },
+    {
+      "questionId": "q4",
+      "answerId": "b",
+      "causeId": "saved-network-fault",
+      "score": 3
+    },
+    {
+      "questionId": "q5",
+      "answerId": "b",
+      "causeId": "router-issue",
+      "score": 3
+    }
+  ]
+}
