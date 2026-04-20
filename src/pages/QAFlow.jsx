@@ -1,16 +1,16 @@
 /*
   QAFlow.jsx
   ----------
-  This is the guided Q&A screen. It loads questions for the
-  selected category from a local JSON file, shows one question
+  This is the guided Q&A screen. It fetches questions for the
+  selected category from the backend API, shows one question
   at a time, collects the user's answers, and either:
   - Sends them to a "Problem Solved" screen if they pick an exit answer
   - Sends them to the Results page when all questions are answered
 */
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import questionsData from '../data/questions.json'
+import { getQuestions } from '../services/api'
 import './QAFlow.css'
 
 function QAFlow() {
@@ -21,8 +21,11 @@ function QAFlow() {
   // useNavigate lets us send the user to a different page
   const navigate = useNavigate()
 
-  // Load the questions for this specific category from the JSON file
-  const categoryData = questionsData[categoryId]
+  // Store the questions fetched from the API
+  const [questions, setQuestions] = useState([])
+
+  // Store the category label for display
+  const [categoryLabel, setCategoryLabel] = useState('')
 
   // Track which question we are currently on (starts at 0 = first question)
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
@@ -33,18 +36,77 @@ function QAFlow() {
   // Store all answers the user has given so far
   const [answers, setAnswers] = useState([])
 
-  // If the category does not exist in our data show an error message
-  if (!categoryData) {
+  // Track whether questions are still loading from the API
+  const [loading, setLoading] = useState(true)
+
+  // Track any error that occurs during the API call
+  const [error, setError] = useState(null)
+
+  // Fetch questions from the API when the component loads
+  useEffect(() => {
+
+    // Map category ids to their display labels
+    const categoryLabels = {
+      signal: 'Mobile Signal',
+      performance: 'Performance',
+      battery: 'Battery and Heat',
+      apps: 'Apps',
+      wifi: 'Wi-Fi and Bluetooth'
+    }
+
+    // Set the label for the current category
+    setCategoryLabel(categoryLabels[categoryId] || categoryId)
+
+    // Fetch the questions from the backend
+    const fetchQuestions = async () => {
+      try {
+        setLoading(true)
+        const data = await getQuestions(categoryId)
+        setQuestions(data)
+        setLoading(false)
+      } catch (err) {
+        setError('Could not load questions. Please check your connection and try again.')
+        setLoading(false)
+      }
+    }
+
+    fetchQuestions()
+  }, [categoryId])
+
+  // Show a loading message while questions are being fetched
+  if (loading) {
     return (
       <div className="qa-container">
-        <p>Category not found. Please go back and try again.</p>
-        <button onClick={() => navigate('/')}>Go Home</button>
+        <div className="qa-loading">
+          <p>Loading questions...</p>
+        </div>
       </div>
     )
   }
 
-  // Get the full list of questions for this category
-  const questions = categoryData.questions
+  // Show an error message if the API call failed
+  if (error) {
+    return (
+      <div className="qa-container">
+        <div className="qa-error">
+          <p>{error}</p>
+          <button className="qa-back-button" onClick={() => navigate('/')}>
+            Go Home
+          </button>
+        </div>
+      </div>
+    )
+  }
+
+  // If no questions came back show a not found message
+  if (questions.length === 0) {
+    return (
+      <div className="qa-container">
+        <p>No questions found for this category.</p>
+        <button onClick={() => navigate('/')}>Go Home</button>
+      </div>
+    )
+  }
 
   // Get the current question object based on the current index
   const currentQuestion = questions[currentQuestionIndex]
@@ -64,7 +126,7 @@ function QAFlow() {
     const updatedAnswers = [
       ...answers,
       {
-        questionId: currentQuestion.id,
+        questionId: currentQuestion.questionId,
         questionText: currentQuestion.text,
         answerId: selectedOption.id,
         answerText: selectedOption.text
@@ -74,12 +136,12 @@ function QAFlow() {
     setAnswers(updatedAnswers)
 
     // Check if the selected answer has the exits flag
-    // If it does, the problem is solved so go to the solved screen
+    // If it does the problem is solved so go to the solved screen
     if (selectedOption.exits) {
       navigate('/solved', {
         state: {
           categoryId: categoryId,
-          categoryLabel: categoryData.label,
+          categoryLabel: categoryLabel,
           fixedBy: selectedOption.fixDescription,
           answers: updatedAnswers
         }
@@ -88,12 +150,12 @@ function QAFlow() {
     }
 
     // Check if this was the last question
-    // If it was, go to the Results page with all the answers
+    // If it was go to the Results page with all the answers
     if (currentQuestionIndex === questions.length - 1) {
       navigate('/results', {
         state: {
           categoryId: categoryId,
-          categoryLabel: categoryData.label,
+          categoryLabel: categoryLabel,
           answers: updatedAnswers
         }
       })
@@ -118,7 +180,7 @@ function QAFlow() {
         <button className="qa-back-button" onClick={handleBack}>
           ← Back
         </button>
-        <span className="qa-category-label">{categoryData.label}</span>
+        <span className="qa-category-label">{categoryLabel}</span>
       </div>
 
       {/* Progress bar showing how far through the questions the user is */}

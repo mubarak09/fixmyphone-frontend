@@ -2,13 +2,15 @@
   Results.jsx
   -----------
   This page is shown when the user completes all the questions
-  in the Q&A flow. It runs the scoring engine against their
-  answers to determine the most likely cause of their problem
-  and then displays a step by step fix plan for that cause.
+  in the Q&A flow. It sends the user's answers to the backend
+  API which runs the scoring engine and returns the most likely
+  cause. The cause title, description and fix steps are then
+  displayed to the user.
 */
 
+import { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import runScoringEngine from '../services/scoringEngine'
+import { diagnose } from '../services/api'
 import './Results.css'
 
 function Results() {
@@ -20,8 +22,39 @@ function Results() {
   // Get the data that was passed when navigating here
   const { categoryId, categoryLabel, answers } = location.state || {}
 
-  // Run the scoring engine to find the most likely cause
-  const topCause = runScoringEngine(categoryId, answers)
+  // Store the top cause returned from the API
+  const [topCause, setTopCause] = useState(null)
+
+  // Track whether the diagnosis is still loading
+  const [loading, setLoading] = useState(true)
+
+  // Track any error that occurs during the API call
+  const [error, setError] = useState(null)
+
+  // Call the diagnose API when the component loads
+  useEffect(() => {
+
+    const runDiagnosis = async () => {
+      try {
+        setLoading(true)
+        const result = await diagnose(categoryId, answers)
+        setTopCause(result)
+        setLoading(false)
+      } catch (err) {
+        setError('Could not run diagnosis. Please check your connection and try again.')
+        setLoading(false)
+      }
+    }
+
+    // Only run if we have the required data
+    if (categoryId && answers) {
+      runDiagnosis()
+    } else {
+      setError('Missing data. Please start again.')
+      setLoading(false)
+    }
+
+  }, [categoryId, answers])
 
   // Handle the back to home button click
   const handleGoHome = () => {
@@ -33,7 +66,32 @@ function Results() {
     navigate(`/qa/${categoryId}`)
   }
 
-  // If no cause was found show a fallback message
+  // Show a loading message while the diagnosis is running
+  if (loading) {
+    return (
+      <div className="results-container">
+        <div className="results-loading">
+          <p>Analysing your answers...</p>
+        </div>
+      </div>
+    )
+  }
+
+  // Show an error message if something went wrong
+  if (error) {
+    return (
+      <div className="results-container">
+        <div className="results-error">
+          <p>{error}</p>
+          <button className="results-home-button" onClick={handleGoHome}>
+            Back to Home
+          </button>
+        </div>
+      </div>
+    )
+  }
+
+  // Show a fallback if no cause was returned
   if (!topCause) {
     return (
       <div className="results-container">
