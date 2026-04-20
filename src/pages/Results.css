@@ -188,3 +188,26 @@
   font-size: 15px;
   color: #666;
 }
+
+/* Loading message shown while diagnosis is running */
+.results-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  font-size: 15px;
+  color: #888;
+}
+
+/* Error message shown if the API call fails */
+.results-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  min-height: 200px;
+  justify-content: center;
+  font-size: 15px;
+  color: #e53935;
+  text-align: center;
+}
