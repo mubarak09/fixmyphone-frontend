@@ -67,3 +67,30 @@ export const diagnose = async (categoryId, answers) => {
   }
   return response.json()
 }
+
+/*
+  getSignalScenario
+  -----------------
+  Sends the user's connectivity context to the backend
+  and returns the best matching simulated signal scenario.
+
+  Parameters:
+    context - object containing:
+      locationType    - "indoors" or "outdoors"
+      issueFrequency  - "everywhere", "one-location" or "intermittent"
+      networkMode     - "4g", "3g", "5g" or "unsure"
+      simStatus       - "active" or "inactive"
+*/
+export const getSignalScenario = async (context) => {
+  const response = await fetch(`${BASE_URL}/api/signal`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(context)
+  })
+  if (!response.ok) {
+    throw new Error('Failed to get signal scenario')
+  }
+  return response.json()
+}

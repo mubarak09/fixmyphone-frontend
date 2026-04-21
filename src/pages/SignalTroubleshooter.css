@@ -1,0 +1,322 @@
+/* ----------------------------------------
+   SignalTroubleshooter.css
+   Styles for the Signal Troubleshooter page
+   This is a dedicated flow for diagnosing
+   mobile network and connectivity issues
+---------------------------------------- */
+
+/* Main container */
+.signal-container {
+  min-height: 100vh;
+  padding: 40px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Header with back button */
+.signal-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+/* Back button */
+.signal-back-button {
+  background: none;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #666;
+  transition: background 0.2s ease;
+}
+
+.signal-back-button:hover {
+  background: #f5f5f5;
+}
+
+/* Page label in the header */
+.signal-header-label {
+  font-size: 14px;
+  color: #888;
+  font-weight: 500;
+}
+
+/* Intro section shown before questions start */
+.signal-intro {
+  margin-bottom: 32px;
+}
+
+.signal-intro-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.signal-intro-subtitle {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Progress section */
+.signal-progress-section {
+  margin-bottom: 32px;
+}
+
+.signal-progress-text {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.signal-progress-bar-background {
+  height: 6px;
+  background: #e8e8e8;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.signal-progress-bar-fill {
+  height: 100%;
+  background: #4a90d9;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+/* Question text */
+.signal-question-text {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.4;
+  margin-bottom: 28px;
+}
+
+/* Answer options list */
+.signal-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Each answer option button */
+.signal-option-button {
+  width: 100%;
+  padding: 16px 20px;
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  text-align: left;
+  font-size: 15px;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.signal-option-button:hover {
+  border-color: #4a90d9;
+  background: #f0f7ff;
+}
+
+.signal-option-button.selected {
+  border-color: #4a90d9;
+  background: #f0f7ff;
+  font-weight: 500;
+}
+
+/* Next button */
+.signal-next-button {
+  width: 100%;
+  margin-top: 24px;
+  padding: 16px;
+  background: #4a90d9;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.signal-next-button:hover {
+  background: #357abd;
+}
+
+/* Signal strength visual */
+.signal-strength-visual {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+/* Each individual signal bar */
+.signal-bar {
+  width: 18px;
+  border-radius: 3px;
+  background: #e8e8e8;
+}
+
+.signal-bar.active {
+  background: #4a90d9;
+}
+
+.signal-bar.active.poor {
+  background: #e53935;
+}
+
+.signal-bar.active.fair {
+  background: #fb8c00;
+}
+
+.signal-bar.active.good {
+  background: #43a047;
+}
+
+/* Signal rating card */
+.signal-rating-card {
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.signal-rating-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.signal-rating-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+
+.signal-rating-explanation {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Fix plan section */
+.signal-fix-heading {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+}
+
+.signal-fix-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.signal-fix-step {
+  display: flex;
+  gap: 16px;
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.signal-step-number {
+  width: 32px;
+  height: 32px;
+  background: #f0f7ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #4a90d9;
+  flex-shrink: 0;
+}
+
+.signal-step-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 6px;
+}
+
+.signal-step-detail {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Home button */
+.signal-home-button {
+  width: 100%;
+  padding: 16px;
+  background: #4a90d9;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  margin-bottom: 12px;
+}
+
+.signal-home-button:hover {
+  background: #357abd;
+}
+
+/* Start again button */
+.signal-restart-button {
+  width: 100%;
+  padding: 16px;
+  background: #ffffff;
+  color: #4a90d9;
+  border: 1px solid #4a90d9;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.signal-restart-button:hover {
+  background: #f0f7ff;
+}
+
+/* Loading state */
+.signal-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  font-size: 15px;
+  color: #888;
+}
+
+/* Error state */
+.signal-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  min-height: 200px;
+  justify-content: center;
+  font-size: 15px;
+  color: #e53935;
+  text-align: center;
+}
