@@ -94,3 +94,27 @@ export const getSignalScenario = async (context) => {
   }
   return response.json()
 }
+
+/*
+  saveSession
+  -----------
+  Saves a completed troubleshooting session to the backend.
+  Called automatically when the user reaches the Results page.
+
+  Parameters:
+    sessionData - object containing categoryId, categoryLabel,
+                  causeTitle, causeDescription, answers, fixSteps
+*/
+export const saveSession = async (sessionData) => {
+  const response = await fetch(`${BASE_URL}/api/sessions`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(sessionData)
+  })
+  if (!response.ok) {
+    throw new Error('Failed to save session')
+  }
+  return response.json()
+}

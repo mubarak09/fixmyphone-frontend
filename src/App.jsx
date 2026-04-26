@@ -12,6 +12,7 @@ import QAFlow from './pages/QAFlow'
 import Results from './pages/Results'
 import SignalTroubleshooter from './pages/SignalTroubleshooter'
 import Solved from './pages/Solved'
+import Summary from './pages/Summary'
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
 
         {/* Signal Troubleshooter - separate dedicated flow */}
         <Route path="/signal" element={<SignalTroubleshooter />} />
+
+        {/* Summary page - shown when user views escalation summary */}
+        <Route path="/summary/:sessionId" element={<Summary />} />
       </Routes>
     </BrowserRouter>
   )
