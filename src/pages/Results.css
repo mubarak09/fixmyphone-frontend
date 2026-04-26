@@ -211,3 +211,38 @@
   color: #e53935;
   text-align: center;
 }
+
+/* Section containing the escalation summary prompt */
+.results-summary-section {
+  background: #f0f7ff;
+  border: 1px solid #c8e0f7;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+/* Hint text above the summary button */
+.results-summary-hint {
+  font-size: 14px;
+  color: #5a9fd4;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+/* Button to view the escalation summary */
+.results-summary-button {
+  width: 100%;
+  padding: 14px;
+  background: #1a6bbf;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.results-summary-button:hover {
+  background: #145299;
+}

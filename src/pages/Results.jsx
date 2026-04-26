@@ -4,13 +4,14 @@
   This page is shown when the user completes all the questions
   in the Q&A flow. It sends the user's answers to the backend
   API which runs the scoring engine and returns the most likely
-  cause. The cause title, description and fix steps are then
-  displayed to the user.
+  cause. The cause and fix steps are displayed and the session
+  is automatically saved to MongoDB so the user can access
+  an escalation summary if needed.
 */
 
 import { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { diagnose } from '../services/api'
+import { diagnose, saveSession } from '../services/api'
 import './Results.css'
 
 function Results() {
@@ -25,6 +26,9 @@ function Results() {
   // Store the top cause returned from the API
   const [topCause, setTopCause] = useState(null)
 
+  // Store the saved session id so we can link to the summary
+  const [sessionId, setSessionId] = useState(null)
+
   // Track whether the diagnosis is still loading
   const [loading, setLoading] = useState(true)
 
@@ -37,8 +41,24 @@ function Results() {
     const runDiagnosis = async () => {
       try {
         setLoading(true)
+
+        // Step 1 - Run the scoring engine to get the top cause
         const result = await diagnose(categoryId, answers)
         setTopCause(result)
+
+        // Step 2 - Automatically save the session to MongoDB
+        const savedSession = await saveSession({
+          categoryId,
+          categoryLabel,
+          causeTitle: result.title,
+          causeDescription: result.description,
+          answers,
+          fixSteps: result.fixSteps
+        })
+
+        // Store the session id so we can link to the summary screen
+        setSessionId(savedSession._id)
+
         setLoading(false)
       } catch (err) {
         setError('Could not run diagnosis. Please check your connection and try again.')
@@ -64,6 +84,11 @@ function Results() {
   // Handle the try again button - restart the same category
   const handleTryAgain = () => {
     navigate(`/qa/${categoryId}`)
+  }
+
+  // Handle the view summary button
+  const handleViewSummary = () => {
+    navigate(`/summary/${sessionId}`)
   }
 
   // Show a loading message while the diagnosis is running
@@ -147,6 +172,22 @@ function Results() {
           </div>
         ))}
       </div>
+
+      {/* Escalation summary button - only shown when session is saved */}
+      {sessionId && (
+        <div className="results-summary-section">
+          <p className="results-summary-hint">
+            Still not resolved? View your escalation summary to share
+            with a support agent.
+          </p>
+          <button
+            className="results-summary-button"
+            onClick={handleViewSummary}
+          >
+            View Escalation Summary
+          </button>
+        </div>
+      )}
 
       {/* Action buttons */}
       <button className="results-home-button" onClick={handleGoHome}>
