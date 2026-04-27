@@ -12,6 +12,7 @@
 import { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { diagnose, saveSession } from '../services/api'
+import { saveSessionToHistory } from '../services/sessionHistory'
 import './Results.css'
 
 function Results() {
@@ -58,6 +59,9 @@ function Results() {
 
         // Store the session id so we can link to the summary screen
         setSessionId(savedSession._id)
+
+        // Save the session to the browser's localStorage history
+        saveSessionToHistory(savedSession._id, categoryLabel, result.title)
 
         setLoading(false)
       } catch (err) {
