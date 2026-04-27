@@ -123,3 +123,107 @@
   font-size: 18px;
   color: #4a90d9;
 }
+
+/* ----------------------------------------
+   Session History Section
+   Shown at the bottom of the Home page
+   when the user has previous sessions
+   saved in localStorage
+---------------------------------------- */
+
+/* Outer container for the history section */
+.history-section {
+  margin-top: 32px;
+}
+
+/* Header row with label and clear button */
+.history-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+/* Previous sessions label */
+.history-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Clear history button */
+.history-clear-button {
+  background: none;
+  border: none;
+  font-size: 13px;
+  color: #e53935;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.history-clear-button:hover {
+  text-decoration: underline;
+}
+
+/* List of history items */
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Each individual history item card */
+.history-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.history-item:hover {
+  border-color: #4a90d9;
+  background: #f0f7ff;
+}
+
+/* Left side content of a history item */
+.history-item-left {
+  flex: 1;
+}
+
+/* Category label in the history item */
+.history-item-category {
+  font-size: 12px;
+  font-weight: 600;
+  color: #4a90d9;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+/* Cause title in the history item */
+.history-item-cause {
+  font-size: 15px;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+/* Date shown in the history item */
+.history-item-date {
+  font-size: 12px;
+  color: #888;
+}
+
+/* Arrow on the right side of the history item */
+.history-item-arrow {
+  font-size: 18px;
+  color: #ccc;
+  margin-left: 12px;
+}

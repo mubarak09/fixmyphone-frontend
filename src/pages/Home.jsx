@@ -1,4 +1,18 @@
+/*
+  Home.jsx
+  --------
+  The Home page of FixMyPhone. This is the first screen
+  the user sees. It shows:
+  - The app title and subtitle
+  - Five issue category cards to select from
+  - A Signal Troubleshooter banner
+  - A session history section showing previous sessions
+    saved to this browser using localStorage
+*/
+
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { getSessionHistory, clearSessionHistory } from '../services/sessionHistory'
 import './Home.css'
 
 const categories = [
@@ -42,12 +56,41 @@ const categories = [
 function Home() {
   const navigate = useNavigate()
 
+  // Load session history from localStorage
+  const [sessionHistory, setSessionHistory] = useState([])
+
+  // Load history when the page opens
+  useEffect(() => {
+    const history = getSessionHistory()
+    setSessionHistory(history)
+  }, [])
+
+  // Handle clicking a category card
   const handleCategoryClick = (categoryId) => {
     navigate(`/qa/${categoryId}`)
   }
 
+  // Handle clearing the session history
+  const handleClearHistory = () => {
+    clearSessionHistory()
+    setSessionHistory([])
+  }
+
+  // Format a date string into a readable format
+  const formatDate = (dateString) => {
+    return new Date(dateString).toLocaleDateString('en-IE', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    })
+  }
+
   return (
     <div className="home-container">
+
+      {/* App title and subtitle */}
       <div className="home-header">
         <h1 className="home-title">FixMyPhone</h1>
         <p className="home-subtitle">
@@ -55,8 +98,10 @@ function Home() {
         </p>
       </div>
 
+      {/* Category selector label */}
       <p className="categories-label">Select your issue</p>
 
+      {/* Category cards */}
       <div className="categories-list">
         {categories.map((category) => (
           <div
@@ -81,6 +126,7 @@ function Home() {
         ))}
       </div>
 
+      {/* Signal Troubleshooter banner */}
       <div
         className="signal-banner"
         onClick={() => navigate('/signal')}
@@ -91,6 +137,43 @@ function Home() {
         </div>
         <span className="signal-banner-arrow">›</span>
       </div>
+
+      {/* Session history section - only shown if there are saved sessions */}
+      {sessionHistory.length > 0 && (
+        <div className="history-section">
+
+          {/* History header with clear button */}
+          <div className="history-header">
+            <p className="history-label">Previous sessions</p>
+            <button
+              className="history-clear-button"
+              onClick={handleClearHistory}
+            >
+              Clear
+            </button>
+          </div>
+
+          {/* List of previous sessions */}
+          <div className="history-list">
+            {sessionHistory.map((entry) => (
+              <div
+                key={entry.sessionId}
+                className="history-item"
+                onClick={() => navigate(`/summary/${entry.sessionId}`)}
+              >
+                <div className="history-item-left">
+                  <p className="history-item-category">{entry.categoryLabel}</p>
+                  <p className="history-item-cause">{entry.causeTitle}</p>
+                  <p className="history-item-date">{formatDate(entry.date)}</p>
+                </div>
+                <span className="history-item-arrow">›</span>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      )}
+
     </div>
   )
 }

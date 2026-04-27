@@ -9,9 +9,10 @@
   an escalation summary if needed.
 */
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { diagnose, saveSession } from '../services/api'
+import { saveSessionToHistory } from '../services/sessionHistory'
 import './Results.css'
 
 function Results() {
@@ -35,8 +36,15 @@ function Results() {
   // Track any error that occurs during the API call
   const [error, setError] = useState(null)
 
+  // This ref prevents diagnosis running twice in React Strict Mode
+  const hasRun = useRef(false)
+
   // Call the diagnose API when the component loads
   useEffect(() => {
+
+    // If this effect has already run once do not run it again
+    if (hasRun.current) return
+    hasRun.current = true
 
     const runDiagnosis = async () => {
       try {
@@ -58,6 +66,9 @@ function Results() {
 
         // Store the session id so we can link to the summary screen
         setSessionId(savedSession._id)
+
+        // Save the session to the browser's localStorage history
+        saveSessionToHistory(savedSession._id, categoryLabel, result.title)
 
         setLoading(false)
       } catch (err) {
