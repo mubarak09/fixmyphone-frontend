@@ -24,7 +24,8 @@ const MAX_SESSIONS = 10
   saveSessionToHistory
   --------------------
   Saves a completed session to the browser's localStorage.
-  Keeps only the most recent MAX_SESSIONS sessions.
+  Checks for duplicates before saving to prevent the same
+  session being stored twice.
 
   Parameters:
     sessionId     - the MongoDB id of the saved session
@@ -35,6 +36,15 @@ export const saveSessionToHistory = (sessionId, categoryLabel, causeTitle) => {
   try {
     // Get the existing history or start with an empty array
     const existingHistory = getSessionHistory()
+
+    // Check if this session id already exists in the history
+    // This prevents duplicates caused by React Strict Mode in development
+    const alreadyExists = existingHistory.some(
+      (entry) => entry.sessionId === sessionId
+    )
+
+    // If it already exists do not save it again
+    if (alreadyExists) return
 
     // Create a new history entry
     const newEntry = {
