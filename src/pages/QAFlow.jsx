@@ -78,7 +78,7 @@ function QAFlow() {
     return (
       <div className="qa-container">
         <div className="qa-loading">
-          <p>Loading questions...</p>
+          <p>Loading questions — please wait, the server may be waking up...</p>
         </div>
       </div>
     )

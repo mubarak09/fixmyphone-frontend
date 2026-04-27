@@ -107,7 +107,7 @@ function Results() {
     return (
       <div className="results-container">
         <div className="results-loading">
-          <p>Analysing your answers...</p>
+          <p>Analysing your answers — please wait...</p>
         </div>
       </div>
     )
