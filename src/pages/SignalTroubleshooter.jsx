@@ -11,9 +11,11 @@
   specifically on mobile network and connectivity issues.
 */
 
-import { useState } from 'react'
+import { useState,useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { getSignalScenario } from '../services/api'
+import { saveSignalSession } from '../services/api'
+import { saveSessionToHistory } from '../services/sessionHistory'
 import './SignalTroubleshooter.css'
 
 /*
@@ -133,6 +135,9 @@ function SignalTroubleshooter() {
     setSelectedOption(option)
   }
 
+  // This ref prevents the session saving twice in React Strict Mode
+  const hasRun = useRef(false)
+
   // Handle when the user clicks the Next button
   const handleNext = async () => {
 
@@ -151,6 +156,35 @@ function SignalTroubleshooter() {
         const result = await getSignalScenario(updatedContext)
         setScenario(result)
         setCompleted(true)
+        setLoading(false)
+
+        // Only save once - prevent double saving in React Strict Mode
+        if (!hasRun.current) {
+          hasRun.current = true
+
+          // Save signal session to MongoDB
+          const savedSession = await saveSignalSession({
+            categoryId: 'signal-troubleshooter',
+            categoryLabel: 'Signal Troubleshooter',
+            causeTitle: result.title,
+            causeDescription: result.explanation,
+            answers: Object.entries(updatedContext).map(([key, value]) => ({
+              questionId: key,
+              questionText: key,
+              answerId: value,
+              answerText: value
+            })),
+            fixSteps: result.fixSteps
+          })
+
+          // Save to localStorage so it appears in Previous Sessions
+          saveSessionToHistory(
+            savedSession._id,
+            'Signal Troubleshooter',
+            result.title
+          )
+        }
+
         setLoading(false)
       } catch (err) {
         setError('Could not analyse your signal context. Please check your connection and try again.')
