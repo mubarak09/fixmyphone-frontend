@@ -124,6 +124,9 @@ function SignalTroubleshooter() {
   // Track whether all questions have been answered
   const [completed, setCompleted] = useState(false)
 
+  // Track which tab is selected - "android" or "ios"
+  const [activeTab, setActiveTab] = useState('android')
+
   // Calculate the progress percentage for the progress bar
   const progressPercentage = (currentQuestionIndex / signalQuestions.length) * 100
 
@@ -174,7 +177,8 @@ function SignalTroubleshooter() {
               answerId: value,
               answerText: value
             })),
-            fixSteps: result.fixSteps
+            fixSteps: result.fixSteps,
+            iosFixSteps: result.iosFixSteps
           })
 
           // Save to localStorage so it appears in Previous Sessions
@@ -216,6 +220,7 @@ function SignalTroubleshooter() {
     setScenario(null)
     setCompleted(false)
     setError(null)
+    setActiveTab('android')
   }
 
   // Show loading state while API call is running
@@ -280,19 +285,38 @@ function SignalTroubleshooter() {
           <p className="signal-rating-explanation">{scenario.explanation}</p>
         </div>
 
-        {/* Fix plan */}
+        {/* Fix plan heading */}
         <h3 className="signal-fix-heading">Recommended steps</h3>
 
+        {/* iOS / Android tab selector */}
+        <div className="results-tab-selector">
+          <button
+            className={`results-tab-button ${activeTab === 'android' ? 'active' : ''}`}
+            onClick={() => setActiveTab('android')}
+          >
+            Android
+          </button>
+          <button
+            className={`results-tab-button ${activeTab === 'ios' ? 'active' : ''}`}
+            onClick={() => setActiveTab('ios')}
+          >
+            iPhone
+          </button>
+        </div>
+
+        {/* Fix steps for selected tab */}
         <div className="signal-fix-steps">
-          {scenario.fixSteps.map((fixStep) => (
-            <div key={fixStep.step} className="signal-fix-step">
-              <div className="signal-step-number">{fixStep.step}</div>
-              <div>
-                <p className="signal-step-title">{fixStep.title}</p>
-                <p className="signal-step-detail">{fixStep.detail}</p>
+          {(activeTab === 'android' ? scenario.fixSteps : scenario.iosFixSteps) &&
+            (activeTab === 'android' ? scenario.fixSteps : scenario.iosFixSteps).map((fixStep) => (
+              <div key={fixStep.step} className="signal-fix-step">
+                <div className="signal-step-number">{fixStep.step}</div>
+                <div>
+                  <p className="signal-step-title">{fixStep.title}</p>
+                  <p className="signal-step-detail">{fixStep.detail}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
 
         {/* Action buttons */}
