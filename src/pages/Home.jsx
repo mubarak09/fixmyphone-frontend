@@ -92,7 +92,9 @@ function Home() {
 
       {/* App title and subtitle */}
       <div className="home-header">
-        <h1 className="home-title">FixMyPhone</h1>
+        <div className="home-logo">
+          <h1 className="home-title"> FixMyPhone<span className="home-logo-icon">📱</span></h1>
+        </div>
         <p className="home-subtitle">
           Answer a few questions and get a step-by-step fix plan for your phone problem.
         </p>
