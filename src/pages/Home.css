@@ -1,3 +1,39 @@
+/* Logo badge container with bold blue border */
+.home-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #4a90d9;
+  border-radius: 14px;
+  padding: 12px 24px;
+  margin-bottom: 24px;
+  background: #4a90d9;
+  box-shadow:
+    inset 0 2px 6px rgba(0, 0, 0, 0.15),
+    0 4px 15px rgba(74, 144, 217, 0.5),
+    0 8px 25px rgba(74, 144, 217, 0.25);
+}
+
+/* Engraved/scratched text effect */
+.home-logo .home-title {
+  font-size: 28px;
+  font-weight: 900;
+  color: #dbe0e6;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+  text-shadow:
+    1px 1px 0px rgba(255, 255, 255, 0.8),
+    -1px -1px 0px rgba(74, 144, 217, 0.4);
+}
+
+/* Phone icon styling */
+.home-logo-icon {
+  font-size: 32px;
+  margin-left: 2px;
+  filter: drop-shadow(1px 1px 0px rgba(18, 85, 155, 0.3));
+}
+
+
 .home-container {
   min-height: 100vh;
   padding: 40px 20px;
@@ -7,6 +43,9 @@
 
 .home-header {
   margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .home-title {
@@ -20,6 +59,10 @@
   font-size: 16px;
   color: #666;
   line-height: 1.5;
+  text-align: center;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  max-width: 320px;
 }
 
 .categories-label {
