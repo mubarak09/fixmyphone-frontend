@@ -58,7 +58,8 @@ function Results() {
           causeTitle: result.title,
           causeDescription: result.description,
           answers,
-          fixSteps: result.fixSteps
+          fixSteps: result.fixSteps,
+          iosFixSteps: result.iosFixSteps
         })
 
         setSessionId(savedSession._id)

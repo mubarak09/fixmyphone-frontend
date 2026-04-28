@@ -177,7 +177,8 @@ function SignalTroubleshooter() {
               answerId: value,
               answerText: value
             })),
-            fixSteps: result.fixSteps
+            fixSteps: result.fixSteps,
+            iosFixSteps: result.iosFixSteps
           })
 
           // Save to localStorage so it appears in Previous Sessions
