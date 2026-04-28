@@ -127,6 +127,12 @@ function SignalTroubleshooter() {
   // Track which tab is selected - "android" or "ios"
   const [activeTab, setActiveTab] = useState('android')
 
+  // Track whether the session has been saved successfully
+  const [sessionSaved, setSessionSaved] = useState(false)
+
+  // Store the saved session id for the summary link
+  const [savedSessionId, setSavedSessionId] = useState(null)
+
   // Calculate the progress percentage for the progress bar
   const progressPercentage = (currentQuestionIndex / signalQuestions.length) * 100
 
@@ -187,6 +193,9 @@ function SignalTroubleshooter() {
             'Signal Troubleshooter',
             result.title
           )
+
+          setSavedSessionId(savedSession._id)
+          setSessionSaved(true)
         }
 
         setLoading(false)
@@ -221,6 +230,8 @@ function SignalTroubleshooter() {
     setCompleted(false)
     setError(null)
     setActiveTab('android')
+    setSessionSaved(false)
+    setSavedSessionId(null)
   }
 
   // Show loading state while API call is running
@@ -318,6 +329,22 @@ function SignalTroubleshooter() {
             ))
           }
         </div>
+
+        {/* Escalation summary button */}
+        {sessionSaved && (
+          <div className="results-summary-section">
+            <p className="results-summary-hint">
+              Still not resolved? View your escalation summary to share
+              with a support agent.
+            </p>
+            <button
+              className="results-summary-button"
+              onClick={() => navigate(`/summary/${savedSessionId}`)}
+            >
+              View Escalation Summary
+            </button>
+          </div>
+        )}
 
         {/* Action buttons */}
         <button className="signal-home-button" onClick={handleBack}>
